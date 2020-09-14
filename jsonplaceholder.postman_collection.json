@@ -7,11 +7,37 @@
 	"item": [
 		{
 			"name": "get the Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fb80e29-015b-4102-9a1e-75ba02ed2da9",
+						"exec": [
+							"pm.test(\"THIS IS PASSSSS\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Leanne Graham\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "https://jsonplaceholder.typicode.com/users",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users"
+					]
 				}
 			},
 			"response": []
